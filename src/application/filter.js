@@ -1,7 +1,26 @@
+/**
+ * @typedef {import("../domain/Country").Person} Person
+ * @typedef {import("../domain/Country").Animal} Animal
+ * @typedef {import("../domain/Country").Country} Country
+ */
+
+
+/**
+ * @param {Animal[]} animals 
+ * @param {string} filter 
+ * @returns {Animal[]}
+ */
 function filterAnimalsByName(animals, filter) {
   return animals.filter(animal => animal.name.includes(filter))
 }
 
+
+
+/**
+ * @param {Person[]} people 
+ * @param {string} filter 
+ * @returns {Person[]}
+ */
 function filterPeopleMatches(people, filter) {
   return people.reduce((filteredPeople, person) => {
     const animals = filterAnimalsByName(person.animals, filter) // Filter the person's animals
@@ -13,6 +32,11 @@ function filterPeopleMatches(people, filter) {
   }, [])
 }
 
+/**
+ * @param {Country[]} countries 
+ * @param {string} filter 
+ * @returns 
+ */
 function filterCountryMatches(countries, filter) {
   return countries.reduce((filteredCountries, country) => {
     const people = filterPeopleMatches(country.people, filter) // Filter the country's people

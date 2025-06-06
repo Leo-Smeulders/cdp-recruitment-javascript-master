@@ -1,5 +1,5 @@
 const { describe, expect, it } = require('@jest/globals')
-const { animalsCount, peoplesCount } = require('./count')
+const { animalsCount, peoplesCount, countFilteredAnimals } = require('./count')
 
 describe('animalsCount', () => {
   const person = {

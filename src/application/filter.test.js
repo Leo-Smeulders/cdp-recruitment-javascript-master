@@ -1,5 +1,5 @@
 const { describe, expect, it } = require('@jest/globals')
-const { data } = require('../data')
+const { data } = require('../../data')
 const { filterAnimalsByName, filterPeopleMatches, filterCountryMatches } = require('./filter')
 
 describe('filterAnimalsByName', () => {
